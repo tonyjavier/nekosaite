@@ -237,15 +237,27 @@ export const TECH_STACK: TechItem[] = [
 ];
 
 export const DIFFERENTIALS = [
-  { title: 'Offline First', desc: 'Funciona perfeitamente sem conexão com a internet.' },
-  { title: 'Dark Mode Premium', desc: 'Pretos profundos #131313 e acentos em laranja vibrante.' },
-  { title: 'Sincronização em Nuvem', desc: 'Seus dados sincronizados no Supabase de forma transparente.' },
-  { title: 'Interface Ultrarrápida', desc: 'Tempo de resposta instantâneo construído em Jetpack Compose.' },
-  { title: 'Material Design 3', desc: 'Padrão oficial do Google com animações e elegância.' },
-  { title: 'Segurança e Criptografia', desc: 'Proteção avançada para suas finanças e anotações.' },
-  { title: 'Login com Google', desc: 'Acesso rápido e seguro em qualquer dispositivo Android.' },
-  { title: 'Dados Protegidos', desc: 'Garantia de privacidade sem venda de dados para terceiros.' },
-  { title: 'Alto Desempenho', desc: 'Consumo mínimo de bateria e memória do smartphone.' }
+  { icon: 'Zap', title: 'Tudo em 1 App Completo', desc: 'Elimina a necessidade de pagar 4 ou 5 assinaturas separadas de produtividade.', badge: 'Economia Total' },
+  { icon: 'WifiOff', title: '100% Offline First', desc: 'Acesse e edite tarefas, notas e finanças mesmo no metrô, avião ou sem sinal.', badge: 'Zero Lags' },
+  { icon: 'Cat', title: 'Mascote Afetivo Companion', desc: 'Um parceiro gato preto que comemora seu progresso e estimula o foco sem cobranças chatas.', badge: 'Gamificação Leve' },
+  { icon: 'Eye', title: 'Dark Mode Ergonômico', desc: 'Cores profundas #131313 e acentos quentes que protegem a visão em uso noturno.', badge: 'Conforto Visual' },
+  { icon: 'ShieldCheck', title: 'Privacidade & Criptografia', desc: 'Seus dados orçamentários e anotações armazenados com segurança máxima e sem anúncios.', badge: 'Dados Protegidos' },
+  { icon: 'Sparkles', title: 'Interface Jetpack Compose', desc: 'Desenvolvido nativamente em Material Design 3 com resposta ao toque em tempo real.', badge: 'Ultra Fluidez' },
+];
+
+export const APP_BENEFITS_COMPARISON = [
+  {
+    before: 'Antes do Neko',
+    beforeDesc: 'Aplicativos espalhados, assinaturas caras, cadastros manuais repetitivos e telas poluídas que causam ansiedade.',
+    after: 'Com o Neko Productivity',
+    afterDesc: 'Rotina unificada, mascotinho incentivador, funcionamento offline instantâneo e paz de espírito em um ambiente dark elegante.',
+    benefits: [
+      'Centralização de Tarefas, Hábitos, Finanças, Notas e Pomodoro',
+      'Companheiro Mascotinho Gato Preto que reage à sua produtividade',
+      'Leve, rápido e sem travamentos por falta de conexão de internet',
+      'Grátis e sem anúncios invasivos interrompendo seu fluxo'
+    ]
+  }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -255,26 +267,26 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Engenheira de Software',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    highlight: 'Substituiu 4 aplicativos diferentes!',
-    text: 'Antes eu usava um app para tarefas, outro para finanças e um timer no navegador. O Neko reuniu tudo com um visual dark incrível e a presença sutil do gato me ajuda a focar sem estresse.'
+    highlight: 'Eu vivia exausta trocando entre 4 apps diferentes!',
+    text: 'Eu sou engenheira de software e trabalho de home office. Eu tinha um problema sério de organização: usava um app para tarefas do trabalho, outro pras finanças, bloco de notas no PC e timer no navegador. Minha cabeça vivia exausta! O Neko resolveu isso unificando tudo num só lugar. Ligo o Pomodoro, o mascotinho gatinho me acompanha nas horas de foco e o visual dark descansou minha vista.'
   },
   {
     id: '2',
     name: 'Lucas Gabriel',
-    role: 'Designer de Produto',
+    role: 'Designer Freelancer',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    highlight: 'O design Material Design 3 é impecável.',
-    text: 'A paleta de cores escuras com o laranja em glow deixa a experiência super prazerosa à noite. O sistema de Habit Dots é viciante para manter as sequências de hábitos!'
+    highlight: 'Eu esquecia prazos de projetos e faturava sem controle.',
+    text: 'Eu sou designer freelancer e meu maior desafio era manter a disciplina com horários e controlar os recebimentos de clientes. Eu esquecia de cobrar e perdia prazos de entrega. O Neko resolveu minha rotina: organizo as tarefas dos freelas por prioridade, lanço os ganhos em finanças e a sequência de hábitos me motivou a ter constância diária.'
   },
   {
     id: '3',
     name: 'Juliana Rocha',
-    role: 'Estudante de Medicina & Criadora',
+    role: 'Estudante de Medicina',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    highlight: 'Funcionamento offline me salvou nos estudos.',
-    text: 'Consigo organizar meus horários no hospital sem depender de sinal de internet. Quando me conecto ao Wi-Fi, o Supabase sincroniza tudo em milissegundos.'
+    highlight: 'Não conseguia estudar no hospital por falta de sinal.',
+    text: 'Eu sou estudante de medicina e faço plantões exaustivos. Meu problema principal era que a internet do hospital vivia caindo e meus antigos apps travavam sem rede. O Neko resolveu isso 100%: ele funciona perfeitamente offline! Anoto resumos, marco pendências e, quando chego em casa no Wi-Fi, ele sincroniza tudo sozinho.'
   }
 ];
 

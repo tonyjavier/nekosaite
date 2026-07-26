@@ -28,6 +28,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
     { name: 'FAQ', href: '#faq' },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] max-w-7xl z-50 transition-all duration-300">
       <div
@@ -61,7 +74,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-semibold text-[#E5E2E1] hover:text-[#FFB693] transition-colors py-1 relative group"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-xs font-semibold text-[#E5E2E1] hover:text-[#FFB693] transition-colors py-1 relative group cursor-pointer"
             >
               {link.name}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF6B00] transition-all duration-200 group-hover:w-full rounded-full" />
@@ -98,8 +112,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-semibold text-[#E5E2E1] hover:text-[#FF6B00] transition-colors py-2.5 px-3.5 rounded-xl hover:bg-white/10 active:bg-white/15"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-sm font-semibold text-[#E5E2E1] hover:text-[#FF6B00] transition-colors py-2.5 px-3.5 rounded-xl hover:bg-white/10 active:bg-white/15 cursor-pointer"
               >
                 {link.name}
               </a>

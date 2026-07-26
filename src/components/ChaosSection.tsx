@@ -5,7 +5,7 @@ import { ScrollGlowText } from './ScrollGlowText';
 
 export const ChaosSection: React.FC = () => {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden bg-[#131313] border-t border-[#201F1F]">
+    <section id="por-que-neko" className="py-20 md:py-28 relative overflow-hidden bg-[#131313] border-t border-[#201F1F]">
       {/* Dark Ambient Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF4444]/5 rounded-full blur-[140px] pointer-events-none" />
 

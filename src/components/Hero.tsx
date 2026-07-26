@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Download, ChevronRight, Star, Flame, Cat, ShieldCheck, Play, Pause, Volume2, VolumeX, X, Smartphone, Film } from 'lucide-react';
+import React from 'react';
+import { motion } from 'motion/react';
+import { Download, ChevronRight, Star, Flame, Cat, ShieldCheck, Sparkles } from 'lucide-react';
 import { heroDashboardImg, mascotImg } from '../assets/images';
 import { ScrollGlowText } from './ScrollGlowText';
 
@@ -10,34 +10,6 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDownload, onExploreFeatures }) => {
-  const [activeMedia, setActiveMedia] = useState<'screenshot' | 'video'>('video');
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const modalVideoRef = useRef<HTMLVideoElement>(null);
-
-  // High quality sample mobile app UI demo video URL
-  const demoVideoUrl = "https://assets.mixkit.co/videos/preview/mixkit-mobile-app-interface-animation-43093-large.mp4";
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
   return (
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-[#131313]">
       {/* Background Ambient Glows */}
@@ -77,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload, onExploreFeatures })
               Trabalho, estudo, contas e hábitos — tudo espalhado, e o dia nunca rende. O Neko Productivity junta tarefas, hábitos, finanças, notas, agenda e foco num só app, feito para quem vive numa rotina corrida e não pode se perder. E o melhor: você não organiza sozinho, tem um gato preto te acompanhando em cada progresso.
             </ScrollGlowText>
 
-            {/* CTA Buttons Block with ample spacing */}
+            {/* CTA Buttons Block */}
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={onOpenDownload}
@@ -88,13 +60,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload, onExploreFeatures })
               </button>
 
               <button
-                onClick={() => setIsVideoModalOpen(true)}
-                className="px-7 py-4 rounded-full bg-white/5 border border-white/15 hover:border-[#FF6B00] text-[#E5E2E1] hover:text-white text-sm font-semibold flex items-center justify-center gap-2.5 hover:bg-white/10 backdrop-blur-xl transition-all cursor-pointer group shadow-lg"
+                onClick={onExploreFeatures}
+                className="px-7 py-4 rounded-full bg-white/5 border border-white/15 hover:border-[#FF6B00] text-[#E5E2E1] hover:text-white text-sm font-semibold flex items-center justify-center gap-2 hover:bg-white/10 backdrop-blur-xl transition-all cursor-pointer group shadow-lg"
               >
-                <div className="w-6 h-6 rounded-full bg-[#FF6B00] text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-3 h-3 fill-white ml-0.5" />
-                </div>
-                <span>Assistir Vídeo Demo</span>
+                <span>Explorar Recursos</span>
+                <ChevronRight className="w-4 h-4 text-[#FF6B00] group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
@@ -140,7 +110,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload, onExploreFeatures })
 
           </motion.div>
 
-          {/* Right Column: Smartphone Frame with REAL App Screenshot or Video Demo */}
+          {/* Right Column: Smartphone Frame with REAL App Screenshot */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -149,32 +119,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload, onExploreFeatures })
           >
             {/* Phone Container Ambient Radial Glow */}
             <div className="absolute w-[340px] h-[550px] bg-gradient-to-tr from-[#FF6B00]/25 via-[#FF6B00]/10 to-transparent rounded-[60px] blur-3xl pointer-events-none" />
-
-            {/* Media Selector Pills: Screenshot vs Video */}
-            <div className="mb-4 z-20 flex items-center gap-1 p-1 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 shadow-md">
-              <button
-                onClick={() => setActiveMedia('video')}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                  activeMedia === 'video'
-                    ? 'bg-[#FF6B00] text-white shadow-sm'
-                    : 'text-[#C8C6C5] hover:text-white'
-                }`}
-              >
-                <Film className="w-3.5 h-3.5" />
-                <span>Vídeo Demo</span>
-              </button>
-              <button
-                onClick={() => setActiveMedia('screenshot')}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                  activeMedia === 'screenshot'
-                    ? 'bg-[#FF6B00] text-white shadow-sm'
-                    : 'text-[#C8C6C5] hover:text-white'
-                }`}
-              >
-                <Smartphone className="w-3.5 h-3.5" />
-                <span>Tela Início</span>
-              </button>
-            </div>
 
             {/* Smartphone Outer Frame */}
             <div className="relative w-[300px] sm:w-[330px] bg-[#0A0A0A] p-3 sm:p-3.5 rounded-[46px] border-[5px] border-[#353534] shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-10 hover:border-[#5A4136] transition-all duration-300">
@@ -185,54 +129,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload, onExploreFeatures })
                 <div className="w-2 h-2 rounded-full bg-[#111]" />
               </div>
 
-              {/* Inner Screen Displaying REAL App Screenshot OR Video */}
+              {/* Inner Screen Displaying REAL App Screenshot */}
               <div className="w-full h-[580px] sm:h-[620px] rounded-[38px] overflow-hidden bg-[#000000] border border-[#2A2A2A] relative group">
-                {activeMedia === 'video' ? (
-                  <div className="relative w-full h-full bg-[#131313]">
-                    <video
-                      ref={videoRef}
-                      src={demoVideoUrl}
-                      poster={heroDashboardImg}
-                      autoPlay
-                      loop
-                      muted={isMuted}
-                      playsInline
-                      className="w-full h-full object-cover object-center"
-                    />
-
-                    {/* Video Overlay Controls */}
-                    <div className="absolute bottom-4 left-3 right-3 p-3 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between text-white z-20">
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={togglePlay}
-                          className="w-8 h-8 rounded-full bg-[#FF6B00] flex items-center justify-center text-white hover:scale-105 transition-transform cursor-pointer"
-                          title={isPlaying ? 'Pausar' : 'Reproduzir'}
-                        >
-                          {isPlaying ? <Pause className="w-4 h-4 fill-white" /> : <Play className="w-4 h-4 fill-white ml-0.5" />}
-                        </button>
-                        <span className="text-[11px] font-bold text-[#E5E2E1]">
-                          {isPlaying ? 'Em reprodução' : 'Pausado'}
-                        </span>
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={toggleMute}
-                          className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
-                          title={isMuted ? 'Ativar som' : 'Desativar som'}
-                        >
-                          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-[#FF6B00]" />}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <img
-                    src={heroDashboardImg}
-                    alt="Neko Productivity App Real Screen - Dashboard Início"
-                    className="w-full h-full object-cover object-top hover:scale-[1.02] transition-transform duration-500"
-                  />
-                )}
+                <img
+                  src={heroDashboardImg}
+                  alt="Neko Productivity App Real Screen - Dashboard Início"
+                  className="w-full h-full object-cover object-top hover:scale-[1.02] transition-transform duration-500"
+                />
               </div>
 
             </div>
@@ -284,76 +187,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload, onExploreFeatures })
         </div>
       </div>
 
-      {/* FULL VIDEO MODAL */}
-      <AnimatePresence>
-        {isVideoModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
-            onClick={() => setIsVideoModalOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl bg-[#1A1A1A] border border-[#353534] rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-6 space-y-4"
-            >
-              {/* Header */}
-              <div className="flex items-center justify-between border-b border-[#2A2A2A] pb-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-[#FF6B00]/20 border border-[#FF6B00]/40 flex items-center justify-center text-[#FF6B00]">
-                    <Film className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-[#E5E2E1]">Demonstração Neko Productivity</h3>
-                    <p className="text-xs text-[#888888]">Conheça a experiência de uso do aplicativo em ação</p>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => setIsVideoModalOpen(false)}
-                  className="p-2 rounded-full bg-[#252525] text-[#888] hover:text-white hover:bg-[#333] transition-colors cursor-pointer"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Video Player */}
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black border border-[#2A2A2A]">
-                <video
-                  ref={modalVideoRef}
-                  src={demoVideoUrl}
-                  controls
-                  autoPlay
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              {/* Footer Note */}
-              <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-[#888888] pt-2 gap-3">
-                <span className="flex items-center gap-1.5 text-[#FFB693]">
-                  <Cat className="w-4 h-4 text-[#FF6B00]" />
-                  <span>Sua rotina simples, organizada e leve com seu mascote companheiro.</span>
-                </span>
-                <button
-                  onClick={() => {
-                    setIsVideoModalOpen(false);
-                    onOpenDownload();
-                  }}
-                  className="px-5 py-2 rounded-full bg-[#FF6B00] text-white font-bold hover:bg-[#e05e00] transition-colors cursor-pointer"
-                >
-                  Baixar Aplicativo
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
     </section>
   );
 };
-
