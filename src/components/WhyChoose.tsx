@@ -15,7 +15,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export const WhyChoose: React.FC = () => {
   return (
-    <section id="por-que-neko" className="py-20 md:py-28 bg-[#131313] relative border-t border-[#201F1F]">
+    <section id="beneficios" className="py-20 md:py-28 bg-[#131313] relative border-t border-[#201F1F]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
         {/* Section Header */}
