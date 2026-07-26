@@ -42,10 +42,13 @@ export const WhyChoose: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="group p-6 sm:p-8 rounded-2xl bg-[#201F1F] border border-[#2A2A2A] hover:border-[#FF6B00]/50 transition-all duration-300 hover:scale-[1.02] shadow-lg flex flex-col justify-between"
+                className="group p-6 sm:p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/15 hover:border-[#FF6B00]/60 transition-all duration-300 hover:scale-[1.02] shadow-xl flex flex-col justify-between relative overflow-hidden"
               >
+                {/* Top specular edge highlight */}
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#2A2A2A] group-hover:bg-[#FF6B00]/20 border border-[#353534] group-hover:border-[#FF6B00]/50 flex items-center justify-center text-[#FF6B00] mb-6 transition-colors shadow-inner">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 group-hover:bg-[#FF6B00]/20 border border-white/20 group-hover:border-[#FF6B00]/50 flex items-center justify-center text-[#FF6B00] mb-6 transition-colors shadow-inner">
                     <IconComponent className="w-6 h-6 text-[#FF6B00]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#E5E2E1] mb-3 group-hover:text-[#FFB693] transition-colors">
@@ -56,7 +59,7 @@ export const WhyChoose: React.FC = () => {
                   </ScrollGlowText>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#2A2A2A]/60 flex items-center gap-2 text-xs font-semibold text-[#FFB693] group-hover:text-[#FF6B00] transition-colors">
+                <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-[#FFB693] group-hover:text-[#FF6B00] transition-colors">
                   <span>Recurso Integrado</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>

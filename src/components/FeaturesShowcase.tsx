@@ -89,9 +89,9 @@ export const FeaturesShowcase: React.FC = () => {
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#E5E2E1]">
                 Dashboard Unificado & Mascot Companion
               </h3>
-              <p className="text-xs sm:text-sm text-[#888888] leading-relaxed">
+              <ScrollGlowText className="text-xs sm:text-sm leading-relaxed" delay={0.05}>
                 Visualize o resumo do seu dia com saudação personalizada, sequência de hábitos, nível de XP do seu gato preto e gráfico de produtividade semanal num relance.
-              </p>
+              </ScrollGlowText>
             </div>
 
             {/* Embedded Screenshot & Live Card */}
@@ -129,9 +129,9 @@ export const FeaturesShowcase: React.FC = () => {
               <h3 className="text-xl font-extrabold text-[#E5E2E1]">
                 Controle Financeiro
               </h3>
-              <p className="text-xs text-[#888888] leading-relaxed">
+              <ScrollGlowText className="text-xs leading-relaxed" delay={0.08}>
                 Entradas, saídas e saldo acumulado de forma intuitiva. Saiba exatamente para onde vai seu dinheiro.
-              </p>
+              </ScrollGlowText>
             </div>
 
             {/* Interactive Finance Card */}

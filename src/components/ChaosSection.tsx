@@ -36,17 +36,18 @@ export const ChaosSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0, rotate: -1.5 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5 }}
-            className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] shadow-xl hover:border-[#FF4444]/40 transition-all group"
+            className="p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/15 shadow-xl hover:border-[#FF4444]/60 transition-all group relative overflow-hidden"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#252525] border border-[#333] flex items-center justify-center text-[#888] group-hover:text-[#FF4444] mb-4">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-[#888] group-hover:text-[#FF4444] mb-4">
               <CheckSquare className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-[#E5E2E1] mb-2">
               Listas de Tarefas Perdidas
             </h3>
-            <p className="text-xs text-[#888888] leading-relaxed">
+            <ScrollGlowText className="text-xs leading-relaxed" delay={0.05}>
               Post-its amarelados na mesa, cadernos esquecidos na mochila e anotações no bloco de notas que você nunca mais lê.
-            </p>
+            </ScrollGlowText>
           </motion.div>
 
           {/* Card 2: Finanças sem controle */}
@@ -55,17 +56,18 @@ export const ChaosSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0, rotate: 1.5 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] shadow-xl hover:border-[#FF4444]/40 transition-all group lg:translate-y-4"
+            className="p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/15 shadow-xl hover:border-[#FF4444]/60 transition-all group lg:translate-y-4 relative overflow-hidden"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#252525] border border-[#333] flex items-center justify-center text-[#888] group-hover:text-[#FF4444] mb-4">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-[#888] group-hover:text-[#FF4444] mb-4">
               <FileSpreadsheet className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-[#E5E2E1] mb-2">
               Planilhas Confusas
             </h3>
-            <p className="text-xs text-[#888888] leading-relaxed">
+            <ScrollGlowText className="text-xs leading-relaxed" delay={0.1}>
               Gastos não anotados, surpresas no final do mês e a incerteza constante de quanto sobrou para fechar a conta.
-            </p>
+            </ScrollGlowText>
           </motion.div>
 
           {/* Card 3: Dispersão e Distrações */}
@@ -74,17 +76,18 @@ export const ChaosSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0, rotate: -1 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] shadow-xl hover:border-[#FF4444]/40 transition-all group"
+            className="p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/15 shadow-xl hover:border-[#FF4444]/60 transition-all group relative overflow-hidden"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#252525] border border-[#333] flex items-center justify-center text-[#888] group-hover:text-[#FF4444] mb-4">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-[#888] group-hover:text-[#FF4444] mb-4">
               <Smartphone className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-[#E5E2E1] mb-2">
               Foco Desfragmentado
             </h3>
-            <p className="text-xs text-[#888888] leading-relaxed">
+            <ScrollGlowText className="text-xs leading-relaxed" delay={0.15}>
               Tentativas de foco interrompidas por notificações, redes sociais e falta de cronograma bem definido.
-            </p>
+            </ScrollGlowText>
           </motion.div>
 
           {/* Card 4: Cansaço mental */}
@@ -93,17 +96,18 @@ export const ChaosSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0, rotate: 2 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] shadow-xl hover:border-[#FF4444]/40 transition-all group lg:translate-y-4"
+            className="p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/15 shadow-xl hover:border-[#FF4444]/60 transition-all group lg:translate-y-4 relative overflow-hidden"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#252525] border border-[#333] flex items-center justify-center text-[#888] group-hover:text-[#FF4444] mb-4">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-[#888] group-hover:text-[#FF4444] mb-4">
               <BrainCircuit className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-[#E5E2E1] mb-2">
               Sobrecarga de Informação
             </h3>
-            <p className="text-xs text-[#888888] leading-relaxed">
+            <ScrollGlowText className="text-xs leading-relaxed" delay={0.2}>
               Lembrar datas, compromissos e obrigações apenas pela memória causa estresse e sensação constante de atraso.
-            </p>
+            </ScrollGlowText>
           </motion.div>
 
         </div>

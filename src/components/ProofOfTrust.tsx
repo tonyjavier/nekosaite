@@ -43,9 +43,9 @@ export const ProofOfTrust: React.FC = () => {
             Quem experimenta, <span className="text-[#FF6B00]">recomenda</span>.
           </h2>
 
-          <p className="text-base sm:text-lg font-medium leading-relaxed text-[#C8C6C5] max-w-2xl mx-auto">
+          <ScrollGlowText className="text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto text-center">
             Veja por que o Neko Productivity é a escolha ideal para simplificar sua rotina, proteger sua mente do cansaço e garantir alta performance diária.
-          </p>
+          </ScrollGlowText>
         </div>
 
         {/* SECTION 1: Key Benefits Cards (Por que o Neko é Muito Melhor) */}
@@ -88,9 +88,9 @@ export const ProofOfTrust: React.FC = () => {
                     {diff.title}
                   </h4>
 
-                  <p className="text-xs text-[#A8A6A5] leading-relaxed">
+                  <ScrollGlowText className="text-xs leading-relaxed" delay={i * 0.03}>
                     {diff.desc}
-                  </p>
+                  </ScrollGlowText>
                 </div>
               </motion.div>
             ))}
@@ -191,9 +191,11 @@ export const ProofOfTrust: React.FC = () => {
                   </h3>
 
                   {/* Testimonial Text Body */}
-                  <p className="text-xs sm:text-sm leading-relaxed italic font-normal text-[#C8C6C5] mb-6 flex-1">
-                    "{test.text}"
-                  </p>
+                  <div className="mb-6 flex-1">
+                    <ScrollGlowText className="text-xs sm:text-sm leading-relaxed italic font-normal text-[#C8C6C5]" delay={index * 0.05}>
+                      "{test.text}"
+                    </ScrollGlowText>
+                  </div>
                 </div>
 
                 {/* User Avatar & Info Footer */}
